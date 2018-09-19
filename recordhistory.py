@@ -6,8 +6,9 @@ import csv
 
 # AmigoCloud variables - change based on user
 #   token found at www.amigocloud.com/accounts/tokens
-amigocloud = AmigoCloud(token='A:OmSkcaqmIRnYyojXAhpe5Kw29q4gRdMiIu9J0o')
-projectOwner = 905
+#   project owner = user id found in /api/v1/me
+amigocloud = AmigoCloud(token='<>')
+projectOwner = <>
 projectNum = [] * 200
 recordNum = [] * 200
 
@@ -60,8 +61,8 @@ for p, d in zip(range(len(projectNum)),range(len(recordNum))):
             rows += response['data']
             export.extend(rows)
 
-# write export list to CSV
-with open('T:/python/completedScripts/results.csv', 'w') as myFile:
+# write export list to CSV, use full path
+with open('', 'w') as myFile:
     fieldnames = ['dataset_id', 'change_date', 'change_type', 'who_changed_custom_id', 'project_num', 'record_history']
     writer = csv.DictWriter(myFile, fieldnames=fieldnames, lineterminator = '\n')
     writer.writeheader()
