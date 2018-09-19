@@ -56,8 +56,8 @@ for p, d in zip(range(len(projectNum)),range(len(recordNum))):
     # query data for each record_history dataset and extend to export list
     while len(rows) < rowCt:
             response = amigocloud.get(sqlURL, {'query': query, 'offset': offset, 'limit': limit, 'state': master,'dataset_id': recordNum[d]})
-            fetched_rows = len(response['data'])
-            offset += fetched_rows
+            dataRows = len(response['data'])
+            offset += dataRows
             rows += response['data']
             export.extend(rows)
 
