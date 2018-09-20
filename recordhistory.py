@@ -30,11 +30,11 @@ while True:
         break
     projects = amigocloud.get(projectsNext)
 
-# lists
+# temp list and final list
 rows = []
 export = []
 
-# for each record_history dataset in each project,
+# for each record_history dataset in each project, set variables, run query, add results to rows, extend export list
 for p, d in zip(range(len(projectNum)),range(len(recordNum))):
     # query variables
     rows[:] = []
